@@ -1,0 +1,8 @@
+venv/
+*.swp
+*~
+*.cfg
+*.pyc
+*.idea
+*.json
+
