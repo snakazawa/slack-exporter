@@ -296,6 +296,8 @@ def process_channel_data(client: WebClient, channel_name: str, start_time: float
             replies = get_thread_replies(client, channel_id, message['thread_ts'])
             message['replies'] = replies
             thread_count += len(replies)
+
+    messages.sort(key=lambda x: float(x.get('ts', 0)))
     
     logger.info(f"メッセージ数: {len(messages)}, スレッド返信数: {thread_count}")
     
